@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="logo">
+            <img src="images/Logo2.png" alt="Logo">
+        </div>
+        <div class="solar-panel">
+            <img src="images/Solar Panel.jpg" alt="Solar Panel">
+        </div>
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button class="btn" data-type="clear">AC</button>
+            <button class="btn" data-type="operator" data-value="√"><i class="fa-solid fa-square-root-variable"></i></button>
+            <button class="btn" data-type="operator" data-value="%"><i class="fas fa-percent fa-sm"></i></button>
+            <button class="btn" data-type="toggle-sign"><i class="fas fa-plus-minus fa-sm"></i></button>
+            <button class="btn" data-type="digit" data-value="7">7</button>
+            <button class="btn" data-type="digit" data-value="8">8</button>
+            <button class="btn" data-type="digit" data-value="9">9</button>
+            <button class="btn" data-type="operator" data-value="/"><i class="fas fa-divide fa-sm"></i></button>
+            <button class="btn" data-type="digit" data-value="4">4</button>
+            <button class="btn" data-type="digit" data-value="5">5</button>
+            <button class="btn" data-type="digit" data-value="6">6</button>
+            <button class="btn" data-type="operator" data-value="*"><i class="fas fa-times fa-sm"></i></button>
+            <button class="btn" data-type="digit" data-value="1">1</button>
+            <button class="btn" data-type="digit" data-value="2">2</button>
+            <button class="btn" data-type="digit" data-value="3">3</button>
+            <button class="btn" data-type="operator" data-value="-"><i class="fas fa-minus fa-sm"></i></button>
+            <button class="btn" data-type="decimal"><i class="fa-solid fa-circle fa-2xs"></i></button>
+            <button class="btn" data-type="digit" data-value="0">0</button>
+            <button class="btn" data-type="operator" data-value="+"><i class="fas fa-plus fa-sm"></i></button>
+            <button class="btn" data-type="equals"><i class="fas fa-equals fa-sm"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
