@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.btn');
     const logo = document.querySelector('.logo');
@@ -188,12 +187,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 result = prev * current;
                 break;
             case '/':
+                if (current === 0) {
+                    currentValue = 'Error';
+                    operator = '';
+                    previousValue = '';
+                    isDecimal = false;
+                    isNegative = false;
+                    clearOperatorHighlight();
+                    display.textContent = 'Error';
+                    display.setAttribute('aria-label', 'Error: Cannot divide by zero');
+                    return;
+                }
                 result = prev / current;
                 break;
             case '%':
                 result = (prev * current) / 100;
                 break;
             case '√':
+                if (current < 0) {
+                    currentValue = 'Error';
+                    operator = '';
+                    previousValue = '';
+                    clearOperatorHighlight();
+                    display.textContent = 'Error';
+                    display.setAttribute('aria-label', 'Error: Cannot take square root of a negative number');
+                    return;
+                }
                 result = Math.sqrt(current);
                 break;
             default:
@@ -210,6 +229,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateDisplay() {
         display.textContent = currentValue;
+        // Reset aria-label to show the current value for screen readers
+        // when it's not an error state
+        if (currentValue !== 'Error') {
+            display.setAttribute('aria-label', 'Calculator display: ' + currentValue);
+        }
     }
 
     updateDisplay();
